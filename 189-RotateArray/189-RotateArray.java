@@ -1,16 +1,17 @@
-// Last updated: 8/20/2026, 1:20:54 PM
+// Last updated: 8/20/2026, 1:57:12 PM
 1class Solution {
-2    public void rotate(int[] nums, int k) {
-3        int n = nums.length;
-4        int shift = k%n;
-5        int[] arr = new int[n];
-6        for(int i=0;i<n;i++){
-7            int newcol = (i+n-shift)%n;
-8            arr[i] = nums[newcol];
-9        }
-10        for(int i=0;i<n;i++){
-11            nums[i] = arr[i];
-12        }
-13
-14    }
-15}
+2    public void sortColors(int[] nums) {
+3        int[] freq=new int[3];
+4        for(int num:nums){
+5            freq[num]++;
+6        }
+7        int j=0;
+8        for(int i=0;i<3;i++){
+9            while(freq[i]>0){
+10                nums[j]=i;
+11                j++;
+12                freq[i]--;
+13            }
+14        }
+15    }
+16}
