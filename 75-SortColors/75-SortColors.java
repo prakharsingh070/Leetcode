@@ -1,0 +1,17 @@
+// Last updated: 8/31/2026, 1:33:13 PM
+class Solution {
+    public void sortColors(int[] nums) {
+        int[] freq=new int[3];
+        for(int num:nums){
+            freq[num]++;
+        }
+        int j=0;
+        for(int i=0;i<3;i++){
+            while(freq[i]>0){
+                nums[j]=i;
+                j++;
+                freq[i]--;
+            }
+        }
+    }
+}
