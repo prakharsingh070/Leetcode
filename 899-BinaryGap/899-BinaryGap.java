@@ -1,0 +1,25 @@
+// Last updated: 8/31/2026, 1:31:50 PM
+class Solution {
+    public int binaryGap(int n) {
+        int c=0;
+        int m=0;
+        boolean found = false;
+        while(n>0){
+            int bit =n%2;
+            if(bit==1){
+                if(found){
+                    m= Math.max(m,c);
+                }
+                c=1;
+                found=true;
+            }
+            else{
+                if(found){
+                    c++;
+                }
+            }
+            n/=2;
+        }
+        return m;
+    }
+}
